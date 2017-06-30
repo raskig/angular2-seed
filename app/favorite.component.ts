@@ -10,7 +10,7 @@ import {Component, Input, EventEmitter, Output} from 'angular2/core';
     `]
 })
 export class FavoriteComponent{
-    @Input('is-favorite') isFavorite = false;
+    @Input('is-favorite') isFavorite;
 
     @Output('favorite-change-event') change = new EventEmitter();
 

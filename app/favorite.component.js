@@ -20,7 +20,6 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             FavoriteComponent = (function () {
                 function FavoriteComponent() {
-                    this.isFavorite = false;
                     this.change = new core_1.EventEmitter();
                 }
                 FavoriteComponent.prototype.onClick = function () {
