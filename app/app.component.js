@@ -53,6 +53,9 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
                 AppComponent.prototype.onFavoriteChange = function ($event) {
                     console.log($event);
                 };
+                AppComponent.prototype.onVote = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
@@ -60,7 +63,7 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
                             '<favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>' +
                             // WROOOONG: '<heart [totalLikes]="[tweet.totalLikes]" [iLike]="[tweet.iLike]"></heart>',
                             '<heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>' +
-                            '<vote [voteCount]="vote.count" [myVote]="vote.myVote"></vote>',
+                            '<vote [voteCount]="vote.count" [myVote]="vote.myVote" (vote)="onVote($event)"></vote>',
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorite_component_1.FavoriteComponent, heart_component_1.HeartComponent, vote_component_1.VoteComponent]
                     }), 
                     __metadata('design:paramtypes', [])

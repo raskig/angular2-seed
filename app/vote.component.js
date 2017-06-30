@@ -30,6 +30,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     }
                     this.myVote++;
                     console.log("Voting up");
+                    this.vote.emit({ myVote: this.myVote });
                 };
                 VoteComponent.prototype.onDownClick = function () {
                     if (this.myVote == -1) {
@@ -37,6 +38,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     }
                     this.myVote--;
                     console.log("Voting down");
+                    this.vote.emit({ myVote: this.myVote });
                 };
                 __decorate([
                     core_1.Input(), 

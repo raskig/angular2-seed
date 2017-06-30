@@ -47,6 +47,7 @@ export class VoteComponent{
         }
         this.myVote++;
         console.log("Voting up");
+        this.vote.emit({ myVote: this.myVote });
     }
 
     onDownClick(){
@@ -55,5 +56,6 @@ export class VoteComponent{
         }
         this.myVote--;
         console.log("Voting down");
+        this.vote.emit({ myVote: this.myVote });
     }
 }

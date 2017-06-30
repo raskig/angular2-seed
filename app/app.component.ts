@@ -13,7 +13,7 @@ import {VoteComponent} from "./vote.component"
     '<favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>' +
     // WROOOONG: '<heart [totalLikes]="[tweet.totalLikes]" [iLike]="[tweet.iLike]"></heart>',
     '<heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>' +
-    '<vote [voteCount]="vote.count" [myVote]="vote.myVote"></vote>',
+    '<vote [voteCount]="vote.count" [myVote]="vote.myVote" (vote)="onVote($event)"></vote>',
     directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent]
 })
 export class AppComponent {
@@ -36,7 +36,11 @@ export class AppComponent {
     }
 
     onFavoriteChange($event){
-        console.log( $event);
+        console.log($event);
+    }
+
+    onVote($event){
+        console.log($event);
     }
 
 }
