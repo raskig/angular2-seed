@@ -34,11 +34,14 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
                         isFavorite: true
                     };
                 }
+                AppComponent.prototype.onFavoriteChange = function ($event) {
+                    console.log($event);
+                };
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         template: '<h1>Hello Angular</h1><courses></courses> <authors></authors>' +
-                            '<favorite [is-favorite]="[post.isFavorite]"></favorite>',
+                            '<favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>',
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
