@@ -29,12 +29,16 @@ System.register(['angular2/core', "./courses.component", "./authors.component", 
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.post = {
+                        title: "App component main Tittle",
+                        isFavorite: true
+                    };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
                         template: '<h1>Hello Angular</h1><courses></courses> <authors></authors>' +
-                            '<favorite></favorite>',
+                            '<favorite [is-favorite]="[post.isFavorite]"></favorite>',
                         directives: [courses_component_1.CoursesComponent, authors_component_1.AuthorsComponent, favorite_component_1.FavoriteComponent]
                     }), 
                     __metadata('design:paramtypes', [])
