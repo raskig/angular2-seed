@@ -6,9 +6,9 @@ import {AutoGrowDirective} from './auto-grow.directive'
 @Component({
     selector: 'courses',//css will find this selector. this is for style
     template:
-    `<h2>Courses</h2>
+    `<h2>{{tittle}}</h2>
     {{title}}
-    <input type="text" autoGrow/>
+    <input type="text" autoGrow [(ngModel)]="tittle"/>
     <ul>
         <li *ngFor="#course of courses">
             {{course}}
