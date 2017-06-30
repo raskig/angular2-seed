@@ -3,6 +3,7 @@ import {CoursesComponent} from "./courses.component";
 import {AuthorsComponent} from "./authors.component";
 import {FavoriteComponent} from "./favorite.component";
 import {HeartComponent} from "./heart.component";
+import {VoteComponent} from "./vote.component"
 
 
 
@@ -11,8 +12,9 @@ import {HeartComponent} from "./heart.component";
     template: '<h1>Hello Angular</h1><courses></courses> <authors></authors>' +
     '<favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>' +
     // WROOOONG: '<heart [totalLikes]="[tweet.totalLikes]" [iLike]="[tweet.iLike]"></heart>',
-    '<heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>',
-    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent]
+    '<heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>' +
+    '<vote [voteCount]="vote.count" [myVote]="vote.myVote"></vote>',
+    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent]
 })
 export class AppComponent {
 
@@ -26,6 +28,11 @@ export class AppComponent {
     tweet = {
         totalLikes: 10,
         iLike: false
+    }
+
+    vote = {
+        count: 10,
+        myVote: 0
     }
 
     onFavoriteChange($event){
