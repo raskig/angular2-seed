@@ -4,17 +4,23 @@ import {AuthorsComponent} from "./authors.component";
 import {FavoriteComponent} from "./favorite.component";
 import {HeartComponent} from "./heart.component";
 import {VoteComponent} from "./vote.component"
+import {ZippyPanel} from "./zippy.component"
 
 
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Hello Angular</h1><courses></courses> <authors></authors>' +
-    '<favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>' +
-    // WROOOONG: '<heart [totalLikes]="[tweet.totalLikes]" [iLike]="[tweet.iLike]"></heart>',
-    '<heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>' +
-    '<vote [voteCount]="vote.count" [myVote]="vote.myVote" (vote)="onVote($event)"></vote>',
-    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent]
+    template: `
+        <h1>Hello Angular</h1><courses></courses> <authors></authors>
+    <favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>
+        <!-- WROOOONG: '<heart [totalLikes]="[tweet.totalLikes]" [iLike]="[tweet.iLike]"></heart>-->
+        <heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>
+        <vote [voteCount]="vote.count" [myVote]="vote.myVote" (vote)="onVote($event)"></vote>
+        <div>
+            <zippy tittle="Who can see my stuff?">This is the who can see.</zippy>
+            <zippy tittle="Who can see my stuff2?">This is the who can see2.</zippy>
+        </div>`,
+    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent, ZippyPanel]
 })
 export class AppComponent {
 
