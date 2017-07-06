@@ -5,6 +5,7 @@ import {FavoriteComponent} from "./favorite.component";
 import {HeartComponent} from "./heart.component";
 import {VoteComponent} from "./vote.component"
 import {ZippyPanel} from "./zippy.component"
+import {ContactFormComponent} from "./contact-form.component"
 
 
 
@@ -19,8 +20,9 @@ import {ZippyPanel} from "./zippy.component"
         <div>
             <zippy tittle="Who can see my stuff?">This is the who can see.</zippy>
             <zippy tittle="Who can see my stuff2?">This is the who can see2.</zippy>
-        </div>`,
-    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent, ZippyPanel]
+        </div>
+    <contact-form></contact-form>`,
+    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent, ZippyPanel, ContactFormComponent]
 })
 export class AppComponent {
 
