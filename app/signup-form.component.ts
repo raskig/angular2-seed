@@ -14,7 +14,7 @@ export class SignUpFormComponent {
     form: ControlGroup;
 
     constructor(fb : FormBuilder){
-        fb.group({
+        this.form = fb.group({
             username:['', Validators.required],
             password: ['', Validators.required]
         })

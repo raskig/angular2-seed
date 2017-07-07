@@ -23,7 +23,7 @@ System.register(['angular2/core', "angular2/common"], function(exports_1, contex
         execute: function() {
             SignUpFormComponent = (function () {
                 function SignUpFormComponent(fb) {
-                    fb.group({
+                    this.form = fb.group({
                         username: ['', common_1.Validators.required],
                         password: ['', common_1.Validators.required]
                     });
