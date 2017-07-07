@@ -6,6 +6,7 @@ import {HeartComponent} from "./heart.component";
 import {VoteComponent} from "./vote.component"
 import {ZippyPanel} from "./zippy.component"
 import {ContactFormComponent} from "./contact-form.component"
+import {SignUpFormComponent} from "./signup-form.component"
 
 
 
@@ -15,14 +16,20 @@ import {ContactFormComponent} from "./contact-form.component"
         <h1>Hello Angular</h1><courses></courses> <authors></authors>
     <favorite [is-favorite]="[post.isFavorite]" (favorite-change-event)="onFavoriteChange($event)"></favorite>
         <!-- WROOOONG: '<heart [totalLikes]="[tweet.totalLikes]" [iLike]="[tweet.iLike]"></heart>-->
+        <hr>
         <heart [totalLikes]="tweet.totalLikes" [iLike]="tweet.iLike"></heart>
+        <hr>
         <vote [voteCount]="vote.count" [myVote]="vote.myVote" (vote)="onVote($event)"></vote>
+        <hr>
         <div>
             <zippy tittle="Who can see my stuff?">This is the who can see.</zippy>
             <zippy tittle="Who can see my stuff2?">This is the who can see2.</zippy>
         </div>
-    <contact-form></contact-form>`,
-    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent, ZippyPanel, ContactFormComponent]
+        <hr>
+        <contact-form></contact-form>
+        <hr>
+        <signup-form></signup-form>`,
+    directives:[CoursesComponent, AuthorsComponent, FavoriteComponent, HeartComponent, VoteComponent, ZippyPanel, ContactFormComponent, SignUpFormComponent]
 })
 export class AppComponent {
 
