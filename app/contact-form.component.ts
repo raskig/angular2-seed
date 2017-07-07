@@ -9,6 +9,10 @@ import {Component} from 'angular2/core';
 })
 export class ContactFormComponent{
 
+    onSubmit(form){
+        console.log(form);
+    }
+
     log(x){
         console.log(x);
     }
